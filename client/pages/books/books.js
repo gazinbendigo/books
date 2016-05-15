@@ -32,7 +32,8 @@ Template.books.onCreated( () => {
 	//let template = new Template.instance();
 	Meteor.subscribe('books', function(){
 		initSortable('.sortable');
-	})
+	});
+
 	// template.subscribe( 'books', () => {
 	// 	initSortable( '.sortable' );
 	// });

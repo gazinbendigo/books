@@ -3,7 +3,8 @@
  */
 
 Meteor.startup(function(){
-	Books.remove(({}));
+	Books.remove({});
+	Teams.remove({});
 
 	if(Books.find({}).count() === 0) {
 		Books.insert({
@@ -18,4 +19,15 @@ Meteor.startup(function(){
 			title: 'The Art of Worldly Wisdom', author: 'Baltasar Gracián', order: 3
 		});
 	}
+
+	if(Teams.find({}).count() === 0) {
+		Teams.insert({
+			name: 'Integration Core Competency', abreviation: 'ICC'
+		});
+
+		Teams.insert({
+			name: 'IT Database Services', abreviation: 'DBS'
+		});
+	}
+
 })

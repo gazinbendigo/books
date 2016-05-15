@@ -17,3 +17,10 @@ FlowRouter.route('/books', {
 		BlazeLayout.render("baseLayout", {header: 'header', main: 'books', footer: 'footer'});
 	}
 });
+
+FlowRouter.route('/teams', {
+	name: 'teams',
+	action: function() {
+		BlazeLayout.render("baseLayout", {header: 'header', main: 'teams', footer: 'footer'});
+	}
+});

@@ -10,15 +10,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                {{#if Template.subscriptionsReady}}
                 <ul class="list-group sortable">
                     {{#each books}}
                         <li data-id="{{_id}}" class="list-group-item clearfix">
                             <span class="pull-left">{{order}}. {{title}} by {{author}}</span>
-                            <i class="fa fa-remove pull-right text-danger delete-book"></i>
+                            <i class="pull-right text-danger delete-book">X</i>
                         </li>
                     {{/each}}
                 </ul>
-
+                {{else}}
+                    {{> spinner}}
+                {{/if}}
             </div>
         </div>
     </div>

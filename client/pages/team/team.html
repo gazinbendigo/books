@@ -1,0 +1,46 @@
+<template name="teams">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Teams</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {{#if Template.subscriptionsReady}}
+                    <ul class="list-group sortable">
+                        {{#each teams}}
+                            <li data-id="{{_id}}" class="list-group-item clearfix">
+                                <span class="pull-left">{{abreviation}} - {{name}}</span>
+                                <i class="pull-right text-danger delete-team">X</i>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{else}}
+                    {{> spinner}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <form id="add-team">
+            <div class="row">
+                <div class="col-xs-12 col-sm-5">
+                    <input type="text" name="teamName" class="form-control" placeholder="Name">
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <input type="text" name="teamAbreviation" class="form-control" placeholder="Abreviation">
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <button type="submit" class="btn btn-success btn-block">Add Team</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</template>
