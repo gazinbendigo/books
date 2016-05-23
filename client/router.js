@@ -24,3 +24,10 @@ FlowRouter.route('/teams', {
 		BlazeLayout.render("baseLayout", {header: 'header', main: 'teams', footer: 'footer'});
 	}
 });
+
+FlowRouter.route('/members', {
+	name: 'members',
+	action: function() {
+		BlazeLayout.render("baseLayout", {header: 'header', main: 'teamMember', footer: 'footer'});
+	}
+});

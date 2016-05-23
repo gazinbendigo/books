@@ -4,7 +4,8 @@
 
 Meteor.startup(function(){
 	Books.remove({});
-	Teams.remove({});
+	// Teams.remove({});
+	// TeamMembers.remove({});
 
 	if(Books.find({}).count() === 0) {
 		Books.insert({
@@ -27,6 +28,24 @@ Meteor.startup(function(){
 
 		Teams.insert({
 			name: 'IT Database Services', abreviation: 'DBS'
+		});
+	}
+
+	if(TeamMembers.find({}).count() === 0) {
+		TeamMembers.insert({
+			firstName: 'Gareth', lastName: 'Baker', order: 1, teamId: 'Z2CkFas6SEdPLfdRj'
+		});
+
+		TeamMembers.insert({
+			firstName: 'Shirin', lastName: 'Iraji', order: 2, teamId: 'Z2CkFas6SEdPLfdRj'
+		});
+
+		TeamMembers.insert({
+			firstName: 'John', lastName: 'NorthField', order: 1, teamId: 'CYRhJsypDnD92yKeH'
+		});
+
+		TeamMembers.insert({
+			firstName: 'Andrew', lastName: 'Joiner', order: 2, teamId: 'CYRhJsypDnD92yKeH'
 		});
 	}
 

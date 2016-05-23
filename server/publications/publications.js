@@ -12,3 +12,7 @@ Meteor.publish('books', function(){
 Meteor.publish('teams', function(){
 	return Teams.find({}, {sort: {name: 1}});
 });
+
+Meteor.publish('teamMembers', function() {
+	return TeamMembers.find({}, {sort:{order: 1}});
+});

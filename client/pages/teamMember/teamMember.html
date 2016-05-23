@@ -1,0 +1,51 @@
+<template name="teamMember">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Team Member Management</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {{#if Template.subscriptionsReady}}
+                    <select id="teamSelector">
+                        {{#each teams}}
+                            <option value="{{_id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                    <ul class="list-group sortable">
+                        {{#each teamMembers}}
+                            <li data-id="{{_id}}" class="list-group-item clearfix">
+                                <span class="pull-left">{{order}}. {{firstName}} {{lastName}}</span>
+                                <i class="pull-right text-danger delete-member">X</i>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{else}}
+                    {{> spinner}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <form id="add-book">
+            <div class="row">
+                <div class="col-xs-12 col-sm-5">
+                    <input type="text" name="firstName" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <button type="submit" class="btn btn-success btn-block">Add Member</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</template>
